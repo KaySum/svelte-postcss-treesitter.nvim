@@ -37,6 +37,20 @@ only the `postcss` route is redirected.
   :TSInstall svelte css scss typescript javascript
   ```
 
+> [!IMPORTANT]
+> This plugin **only sets the injection query — it does not install any parsers.**
+> The query routes `<style>` blocks to the `css` and `scss` grammars, so those
+> parsers must be installed or the blocks won't highlight at all. If you manage
+> parsers through `nvim-treesitter`'s `ensure_installed`, add `css` and `scss`
+> there:
+>
+> ```lua
+> {
+>   "nvim-treesitter/nvim-treesitter",
+>   opts = { ensure_installed = { "css", "scss" } },
+> }
+> ```
+
 ## Installation
 
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
